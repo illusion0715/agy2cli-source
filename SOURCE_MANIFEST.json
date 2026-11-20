@@ -1,0 +1,15 @@
+{
+  "upstream": "https://github.com/su-kaka/agy2api",
+  "scope": "Reviewed source subset; not a complete or runnable deployment backup",
+  "recorded_upstream_version": "60979cdb36fee7e63769a8b0c062f2f15d6bedbd",
+  "version_caveat": "This is the running container version.txt metadata, not a verified Git HEAD. Snapshot content hashes identify the archived files.",
+  "files": {
+    "LICENSE": "3b516a4e600c5f657ef987996f0d7369259a96efa1691e149ebc653c99c311d8",
+    "src/models.py": "f46b28ee9b304294043c470340933e42fdd083bbe740ec0d9c83fb9475c84969",
+    "src/token_estimator.py": "c8583a93ecff9cde0f75ebd25e21c2a28bbb63f79463438e384eaa76064b7c71",
+    "src/router/stream_passthrough.py": "100c9a00412c3a7101da2c5ef786297dcf1a620849c18be633acca163057ef8a",
+    "frontend/src/basePath.js": "74175b260935db259114853e31f766b8a10c340d7ce11968af7f619363f99456",
+    "frontend/postcss.config.js": "e32657baf631d7c5f4dc67b4b2ee0ec8e7d5b3c41860e09cddce7c0377cd80bc",
+    "frontend/tailwind.config.js": "2a6adbe4bad075840b67142fb17114c1b79869398cb050f16de797d218f01b91"
+  }
+}

@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.env*
+creds/
+credentials/
+*.db
+*.sqlite*
+*.log
+node_modules/
+dist/
+.venv/
