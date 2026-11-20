@@ -1,9 +1,13 @@
-# Reviewed source subset
+# AGY2API 当前版本工程源码审阅归档
 
-This private archival snapshot contains selected source files from [agy2api](https://github.com/su-kaka/agy2api). Original copyright and the Cooperative Non-Commercial License (CNC-1.0) are retained in LICENSE. This archive is intended for non-commercial preservation under that license.
+本仓库保存来自 [su-kaka/agy2api](https://github.com/su-kaka/agy2api) 当前运行镜像对应的、逐模块审阅后的工程源码。保留正常实现、原有目录分层、许可及依赖声明；需要排除的能力未包含。**这不是完整可部署版本，也不是只有部署时间线的备份。**
 
-This is **not a complete or runnable backup**. The included files are unchanged request-data schemas, a rough token estimator, generic async streaming-response helpers, a browser base-path helper, and static PostCSS/Tailwind configuration. See SOURCE_MANIFEST.json for exact content hashes and the recorded version caveat.
+先阅读 [ARCHITECTURE.md](ARCHITECTURE.md)，再看 [ARCHIVE_REVIEW.json](ARCHIVE_REVIEW.json) 的逐文件保留状态。`DEPLOYMENT_TIMELINE.md` 仅为附加证据，不是主要交付。
 
-Excluded entirely: OAuth/login flows and validation relaxation; signature-validation bypass or placeholder logic; authentication and credential management/import/export; provider request adapters and converters; anti-truncation logic; database and runtime/logging code; executable entrypoints and deployment/install scripts; environment files and examples; cookies, sessions, access/refresh tokens, API keys, credentials, databases and logs; binaries, archives, built assets, runtime data, deployment/personal identifiers, and all previous Git history. No provider calls, source execution, builds, or service changes were performed for this archival snapshot.
+版本依据：运行镜像标签 `source-218ea453cf75`；镜像内 `version.txt` 记录 `60979cdb36fee7e63769a8b0c062f2f15d6bedbd`。这是版本元数据，不等同于已核实的 Git HEAD。归档自己的 Git 提交与来源版本分开记录。
 
-The omitted components must not be inferred to exist in this repository. Restore or deployment from this subset is unsupported.
+正常 OAuth 授权码和刷新操作保留在 `src/google_oauth_api.py`，只接收调用方显式提供的参数，不包含真实客户端凭据，也未接到原生产认证控制器。被省略的认证、签名和凭证处理链路没有恢复。
+
+仅进行了静态语法、导入引用、源码片段一致性、隐私／秘密和 Git 对象审查；没有运行、构建、调用服务或部署。本库 API 生成／模型查询入口明确返回 503，数据库连接明确拒绝执行，缺少密码配置时拒绝认证。不要把页面或入口文件的存在误认为全功能恢复。
+
+原作者署名和 CNC-1.0 非商业许可保留于 [LICENSE](LICENSE)。配置示例完全为假值，不能用于真实服务。仓库不含真实环境文件、登录态、Cookie、访问／刷新令牌、数据库、日志、构建产物、二进制或运行数据，也不携带生产 Git 历史。

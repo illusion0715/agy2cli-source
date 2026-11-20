@@ -1,0 +1,10 @@
+{
+  "static_only": true,
+  "no_application_execution_or_build": true,
+  "python_files_parsed": 35,
+  "local_import_symbols_checked": 39,
+  "findings": [],
+  "review_scope": "Static syntax/reference checks only; not a build, runtime, security proof, or provider compatibility test.",
+  "excluded_implementation_marker_scan": "pass",
+  "credential_privacy_scan": "pass"
+}

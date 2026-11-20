@@ -1,6 +1,6 @@
 # AGY2API deployment evidence timeline
 
-Read-only observation: 2026-11-20. All times below are UTC. Add eight hours for Beijing time. This document adds deployment metadata only; the original ten reviewed archive files are unchanged. No historical executable code, runtime data, credentials, private endpoints, accounts, production configuration, network mappings, or Git history is included.
+Read-only observation: 2026-11-20. All times below are UTC. Add eight hours for Beijing time. This document records deployment metadata only. The engineering archive has subsequently been expanded; ARCHITECTURE.md is authoritative for its current scope. No historical executable code, runtime data, credentials, private endpoints, accounts, production configuration, network mappings, or Git history is included.
 
 ## Evidence boundaries
 
