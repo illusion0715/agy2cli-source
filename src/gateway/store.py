@@ -1,4 +1,5 @@
 """Daily aggregate counters only: no prompts, responses, models, identities or keys."""
+from contextlib import contextmanager
 from datetime import datetime, timezone
 from pathlib import Path
 import sqlite3
@@ -14,8 +15,16 @@ class Store:
                 input_tokens INTEGER, output_tokens INTEGER, elapsed_ms INTEGER,
                 PRIMARY KEY(day, route, status))""")
 
+    @contextmanager
     def connect(self):
-        return sqlite3.connect(self.path, timeout=5)
+        # sqlite3.Connection.__exit__ handles commit/rollback, but does not close.
+        # Each operation owns its own connection, including when transaction exit fails.
+        db = sqlite3.connect(self.path, timeout=5)
+        try:
+            with db:
+                yield db
+        finally:
+            db.close()
 
     def record(self, route: str, status: int, elapsed_ms: int, usage: dict):
         # A storage failure must not turn a completed upstream request into a retry.
