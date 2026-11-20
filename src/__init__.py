@@ -1,1 +1,1 @@
-"""Reviewed archival package; see ARCHITECTURE.md for boundaries."""
+"""AGY2API official Gemini edition."""

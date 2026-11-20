@@ -1,0 +1,27 @@
+services:
+  gateway:
+    build:
+      context: .
+      target: runtime
+    image: agy2api-official:local
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8080:8080"
+    environment:
+      GATEWAY_API_KEY: ${GATEWAY_API_KEY:?Set GATEWAY_API_KEY in .env}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:?Set GEMINI_API_KEY in .env}
+      DATA_DIR: /data
+      UPSTREAM_TIMEOUT_SECONDS: ${UPSTREAM_TIMEOUT_SECONDS:-180}
+      MAX_CONCURRENT: ${MAX_CONCURRENT:-16}
+      MAX_BODY_BYTES: ${MAX_BODY_BYTES:-1048576}
+    volumes:
+      - gateway-data:/data
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+volumes:
+  gateway-data:

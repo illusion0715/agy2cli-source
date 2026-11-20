@@ -1,8 +1,0 @@
-{
-  "archive_only": true,
-  "API_PASSWORD": "EXAMPLE_ONLY_NOT_A_VALID_PASSWORD",
-  "PANEL_PASSWORD": "EXAMPLE_ONLY_NOT_A_VALID_PASSWORD",
-  "PROXY": null,
-  "oauth_client_id": "EXAMPLE_ONLY_CLIENT_ID",
-  "oauth_client_secret": "EXAMPLE_ONLY_NOT_A_REAL_SECRET"
-}
